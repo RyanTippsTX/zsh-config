@@ -1,4 +1,4 @@
-# Aliases for Zsh
+# Ryan's aliases for Zsh
 
 # for managing config files
 alias zshenv='code -n $ZDOTDIR/.zshenv'
@@ -32,15 +32,6 @@ alias lsa='ls -lah'
 alias fd='find . -type d -name'
 alias ff='find . -type f -name'
 
-# go up multiple directories
-# alias cd='
-#   function _cd(){ 
-#     # if first thre chars of $1 are "..." then cd .. and recurse
-#     # else cd $@
-#   }; 
-#   _cd 
-# '
-
 # Check if you are in an interactive shell
 check-if-interactive() {
   [[ $- == *i* ]] && echo 'Interactive' || echo 'Not interactive'
@@ -51,7 +42,7 @@ check-if-login() {
   [[ -o login ]] && echo 'Login shell' || echo 'Not login shell' 
 }
 
-# Some food functions to copy in future
+# Some good functions to copy in future
 # https://github.com/VonHeikemen/dotfiles/blob/master/my-configs/shell/custom-functions.sh
 
 # Create a new react app
