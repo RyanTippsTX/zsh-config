@@ -1,0 +1,84 @@
+# Aliases for Zsh
+
+# for managing config files
+alias zshenv='code -n $ZDOTDIR/.zshenv'
+alias zprofile='code -n $ZDOTDIR/.zprofile'
+# alias zshlogin='' # not used
+alias zshrc='code -n $ZDOTDIR/.zshrc'
+alias zshaliases='code -n $ZDOTDIR/.zshaliases'
+alias reload='source $ZDOTDIR/.zshrc'
+zshconfig() {
+  # Open all config files (in order that they are loaded by system)
+  code -n \
+  $ZDOTDIR \
+  /etc/zshenv \
+  $ZDOTDIR/.zshenv \
+  /etc/zprofile \
+  $ZDOTDIR/.zprofile \
+  /etc/zshrc \
+  /etc/zshrc_Apple_Terminal \
+  $ZDOTDIR/.zshrc \
+  $ZDOTDIR/.zshaliases 
+}
+
+# ls aliases
+alias l='ls -lah'
+alias la='ls -lAh'
+alias ll='ls -lh'
+alias ls='ls -G'
+alias lsa='ls -lah'
+
+# searching for dir or file
+alias fd='find . -type d -name'
+alias ff='find . -type f -name'
+
+# go up multiple directories
+# alias cd='
+#   function _cd(){ 
+#     # if first thre chars of $1 are "..." then cd .. and recurse
+#     # else cd $@
+#   }; 
+#   _cd 
+# '
+
+# Check if you are in an interactive shell
+check-if-interactive() {
+  [[ $- == *i* ]] && echo 'Interactive' || echo 'Not interactive'
+}
+
+# Check if you are in a login shell
+check-if-login() {
+  [[ -o login ]] && echo 'Login shell' || echo 'Not login shell' 
+}
+
+# Some food functions to copy in future
+# https://github.com/VonHeikemen/dotfiles/blob/master/my-configs/shell/custom-functions.sh
+
+# Create a new react app
+# react-app() {
+#   npx create-react-app $1
+#   cd $1
+#   npm i -D eslint
+#   npm i -D eslint-config-prettier eslint-plugin-prettier
+#   npm i -D eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks
+#   cp "${HOME}/.eslintrc.json" .
+#   cp "${HOME}/.prettierrc" .
+#   echo $1 > README.md
+#   rm -rf yarn.lock
+#   cd src
+#   rm -f App.css App.test.js index.css logo.svg serviceWorker.js
+#   mkdir components views
+#   git add -A
+#   git commit -m "Initial commit."
+#   cd ..
+#   clear
+#   code .
+# }
+
+# # Echo metadata
+# echo-metadata() {
+#   echo 'default login shell: ' $SHELL
+#   echo 'working directory: ' $PWD
+#   ps -p $$
+# }
+
