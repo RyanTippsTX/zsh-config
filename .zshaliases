@@ -27,6 +27,8 @@ alias la='ls -lAh'
 alias ll='ls -lh'
 alias ls='ls -G'
 alias lsa='ls -lah'
+# Would be nice to add column headings like this:
+# (printf "PERM LINKS OWNER GROUP SIZE MONTH DAY HH:MM/YEAR NAME\n"; ls -l | sed 1d) | column -t
 
 # searching for dir or file
 alias fd='find . -type d -name'
