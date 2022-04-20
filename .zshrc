@@ -25,12 +25,17 @@ setopt INC_APPEND_HISTORY
 autoload -U colors && colors
 
 
-# Command prompt in Longhorn colors \m/
-PROMPT="%F{166}%B%n@MBP%b %~%f %# "
+# Customize prompt in Longhorn colors \m/ plus git branch info
+autoload -Uz vcs_info
+precmd () { vcs_info }
+setopt PROMPT_SUBST
+# Color codes for 256 color terminals https://unix.stackexchange.com/questions/124407/what-color-codes-can-i-use-in-my-bash-ps1-prompt/124409#124409
+zstyle ':vcs_info:git:*' formats ' %F{222}[%b]%f'
+PROMPT='%F{166}%B%n@MBP%b %~%f${vcs_info_msg_0_} %# '
 
 
 # Enable ls colors:
-# - LSCOLORS is BSD style, less options, used by /bin/ls
+# - LSCOLORS is BSD style, less options, used by /bin/ls on MacOS
 # - LS_COLORS is GNU style, more options, used by zsh tab completions
 # export LSCOLORS="exfxcxdxbxegedabagacad" # uncomment to override defaults of /bin/ls
 # LS_COLORS="di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43" # uncomment to override defaults of tab completion
