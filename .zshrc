@@ -83,3 +83,6 @@ alias run-help='function _run-help(){run-help "$@" | less}; _run-help'
 # Load zsh-syntax-highlighting (should be sourced very last)
 # https://github.com/zsh-users/zsh-syntax-highlighting
 source "$ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
+# bun completions
+[ -s "/Users/ryantipps/.bun/_bun" ] && source "/Users/ryantipps/.bun/_bun"
