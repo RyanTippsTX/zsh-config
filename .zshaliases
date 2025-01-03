@@ -24,6 +24,9 @@ zshconfig() {
 # disable dangerous built-in commands
 alias r="echo 'The r command is disabled.'"
 
+# clear history
+alias c='clear'
+
 # ls aliases
 alias l='ls -lah'
 alias la='ls -lAh'
