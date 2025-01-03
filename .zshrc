@@ -86,3 +86,11 @@ source "$ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # bun completions
 [ -s "/Users/ryantipps/.bun/_bun" ] && source "/Users/ryantipps/.bun/_bun"
+
+# pnpm
+export PNPM_HOME="/Users/ryantipps/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
