@@ -21,6 +21,9 @@ zshconfig() {
   $ZDOTDIR/.zshaliases 
 }
 
+# disable dangerous built-in commands
+alias r="echo 'The r command is disabled.'"
+
 # ls aliases
 alias l='ls -lah'
 alias la='ls -lAh'
