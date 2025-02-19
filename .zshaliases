@@ -49,35 +49,3 @@ check-if-interactive() {
 check-if-login() {
   [[ -o login ]] && echo 'Login shell' || echo 'Not login shell' 
 }
-
-# Some good functions to copy in future
-# https://github.com/VonHeikemen/dotfiles/blob/master/my-configs/shell/custom-functions.sh
-
-# Create a new react app
-# react-app() {
-#   npx create-react-app $1
-#   cd $1
-#   npm i -D eslint
-#   npm i -D eslint-config-prettier eslint-plugin-prettier
-#   npm i -D eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks
-#   cp "${HOME}/.eslintrc.json" .
-#   cp "${HOME}/.prettierrc" .
-#   echo $1 > README.md
-#   rm -rf yarn.lock
-#   cd src
-#   rm -f App.css App.test.js index.css logo.svg serviceWorker.js
-#   mkdir components views
-#   git add -A
-#   git commit -m "Initial commit."
-#   cd ..
-#   clear
-#   code .
-# }
-
-# # Echo metadata
-# echo-metadata() {
-#   echo 'default login shell: ' $SHELL
-#   echo 'working directory: ' $PWD
-#   ps -p $$
-# }
-
