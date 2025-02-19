@@ -27,14 +27,20 @@ alias r="echo 'The r command is disabled.'"
 # clear history
 alias c='clear'
 
-# ls aliases
-alias l='ls -lah'
-alias la='ls -lAh'
-alias ll='ls -lh'
+# ls aliases with column headings
+l() {
+  (printf "PERM LINKS OWNER GROUP SIZE MONTH DAY HH:MM/YEAR NAME\n"; ls -lah "$@" | sed '1d') | column -t
+}
+la() {
+  (printf "PERM LINKS OWNER GROUP SIZE MONTH DAY HH:MM/YEAR NAME\n"; ls -lAh "$@" | sed '1d') | column -t
+}
+ll() {
+  (printf "PERM LINKS OWNER GROUP SIZE MONTH DAY HH:MM/YEAR NAME\n"; ls -lh "$@" | sed '1d') | column -t
+}
 alias ls='ls -G'
-alias lsa='ls -lah'
-# Would be nice to add column headings like this:
-# (printf "PERM LINKS OWNER GROUP SIZE MONTH DAY HH:MM/YEAR NAME\n"; ls -l | sed 1d) | column -t
+lsa() {
+  (printf "PERM LINKS OWNER GROUP SIZE MONTH DAY HH:MM/YEAR NAME\n"; ls -lah "$@" | sed '1d') | column -t
+}
 
 # searching for dir or file
 alias fd='find . -type d -name'
