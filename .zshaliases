@@ -9,7 +9,7 @@ alias zshaliases='code -n $ZDOTDIR/.zshaliases'
 alias reload='source $ZDOTDIR/.zshrc'
 zshconfig() {
   # Open all config files (in order that they are loaded by system)
-  code -n \
+  cursor -n \
   $ZDOTDIR \
   /etc/zshenv \
   $ZDOTDIR/.zshenv \
