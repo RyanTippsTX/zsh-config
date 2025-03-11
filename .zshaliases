@@ -25,7 +25,7 @@ zshconfig() {
 alias r="echo 'The r command is disabled.'"
 
 # clear history
-alias c='clear'
+alias clc='clear'
 
 # ls aliases with column headings
 l() {
