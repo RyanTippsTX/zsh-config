@@ -62,6 +62,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 
+# Add Homebrew to path
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
+
+
 # Load aliases:
 [[ -f $ZDOTDIR/.zshaliases ]] && source $ZDOTDIR/.zshaliases
 
@@ -94,3 +98,4 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
